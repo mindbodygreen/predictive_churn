@@ -1,0 +1,35 @@
+predictive_churn/
+├── src/
+│   ├── __init__.py
+│   ├── data_loader.py
+│   ├── preprocessing.py
+│   ├── feature_engineering.py
+│   ├── model.py
+│   ├── targets.py
+│   ├── cadence_utils.py
+│   ├── train.py
+│   └── evaluate.py
+├── notebooks/
+│   └── eda.ipynb
+├── tests/
+│   ├── __init__.py
+│   ├── test_data_loader.py
+│   ├── test_preprocessing.py
+│   ├── test_model.py
+│   └── test_targets.py
+├── configs/
+│   ├── monthly.yaml
+│   ├── bimonthly.yaml
+│   ├── quarterly.yaml
+│   └── 20_day.yaml
+├── models/
+│   ├── monthly/
+│   ├── bimonthly/
+│   ├── quarterly/
+│   └── 20_day/
+├── data/
+│   └── .gitkeep
+├── main.py
+├── requirements.txt
+├── README.md
+└── project_structure.txt  
