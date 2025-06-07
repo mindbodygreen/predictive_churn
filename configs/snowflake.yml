@@ -1,0 +1,8 @@
+snowflake:
+  account: zfb96811.us-east-1
+  user: ${SNOWFLAKE_USER}
+  password: ${SNOWFLAKE_PASSWORD}
+  role: ACCOUNTADMIN
+  warehouse: COMPUTE_WH
+  database: ANALYTICS
+  schema: PUBLIC 
