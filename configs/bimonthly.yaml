@@ -1,13 +1,10 @@
 cadence: bimonthly
 churn_window_days: 14
+label: churn_label_14d
 features:
-  - cycles_completed
-  - is_active
-  - days_since_created
-  - days_to_next_order
-  - updated_recently
+  - lifetime
 filters:
   status: active
   frequency: 60d
 timestamp_column: event_time
-label_column: churn_label_14d
+label_column: CHURN_LABEL_14_DAY
