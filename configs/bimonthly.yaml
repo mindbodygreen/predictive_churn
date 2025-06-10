@@ -1,10 +1,21 @@
 cadence: bimonthly
-churn_window_days: 14
-label: churn_label_14d
+label: CHURN_LABEL_14_DAY
 features:
-  - lifetime
-filters:
-  status: active
-  frequency: 60d
-timestamp_column: event_time
-label_column: CHURN_LABEL_14_DAY
+  - LIFETIME_DAY
+  - MALES_PER_100_FEMALES
+  - HH_MEAN_INCOME
+  - HH_MEDIAN_INCOME
+  - AGE_MEDIAN
+  - AVG_HOUSEHOLD_SIZE
+  - MARRIED_HH
+  - SINGLE_MALE_HH
+  - TOTAL_NET_REVENUE
+  - ORDER_COUNT
+  - DAYS_SINCE_LAST_ORDER
+  - PAID_SOCIAL
+  - PAID_SEARCH
+  - REFERRAL
+  - AFFILIATE
+  - ORGANIC_SOCIAL
+  - ORGANIC_SEARCH
+  - MAIN_SITE
