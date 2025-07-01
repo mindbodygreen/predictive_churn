@@ -1,21 +1,19 @@
+import os
+import yaml
 from snowflake.snowpark import Session
 from typing import Dict, Optional
 
+
 class SnowflakeConnector:
-    def __init__(self):
+    def __init__(self, config_path="configs/snowflake.yml"):
         self._session = None
+        self.config_path = config_path
 
     def get_connection_parameters(self) -> Dict[str, str]:
-        """Get Snowflake connection parameters."""
-        return {
-            "account": "zfb96811.us-east-1",
-            "role": "ACCOUNTADMIN",
-            "database": "ANALYTICS",
-            "schema": "PUBLIC",
-            "warehouse": "COMPUTE_WH",
-            "user": "IMAHAKUMARA",
-            "password": "gEfnun-dewnin-0nadpy"
-        }
+        """Get Snowflake connection parameters from YAML file."""
+        with open(self.config_path, "r") as file:
+            config = yaml.safe_load(file)
+        return config.get("snowflake", {})
 
     def get_session(self) -> Session:
         """Get or create Snowflake session."""
@@ -33,8 +31,9 @@ class SnowflakeConnector:
 # Create a singleton instance
 snowflake_connector = SnowflakeConnector()
 
-def get_snowflake_session() -> Session:
+def create_active_session() -> Session:
     """Helper function to get Snowflake session."""
+    snowflake_connector = SnowflakeConnector()
     return snowflake_connector.get_session()
 
 def close_snowflake_session() -> None:
