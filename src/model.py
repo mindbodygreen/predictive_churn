@@ -1,3 +1,5 @@
+# model.py
+
 import xgboost as xgb
 import pandas as pd
 
@@ -63,3 +65,4 @@ def predict_churn(booster, dtest, threshold=0.7):
     })
 
     return results_df
+
